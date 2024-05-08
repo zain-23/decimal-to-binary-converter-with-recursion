@@ -3,12 +3,14 @@ const convertBtn = document.getElementById("convert-btn");
 const result = document.getElementById("result");
 
 const checkUserInput = () => {
-  console.log(numberInput.value);
+  if (!numberInput.value) {
+    alert("Please enter the value");
+  }
 };
 
 convertBtn.addEventListener("click", checkUserInput);
 numberInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    console.log("yesy");
+    checkUserInput();
   }
 });
